@@ -32,6 +32,10 @@ const operations = {
   },
 };
 
+module.exports = operations;
+
+/* istanbul ignore next */
+if (require.main === module) {
 const [, , operation, num1, num2] = process.argv;
 
 if (!operation || num1 === undefined || num2 === undefined) {
@@ -63,4 +67,5 @@ try {
 } catch (err) {
   console.error(err.message);
   process.exit(1);
+}
 }
